@@ -1,0 +1,62 @@
+# =========================================================================
+# Unity用の標準的な .gitignore テンプレート
+# =========================================================================
+
+# --- Unityが自動生成する一時フォルダ・ログ ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ex]logs/
+/[Mm]emory[Cc]aptures/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# 以下の2つのフォルダはパッケージマネージャー用、ローカル設定用なので除外
+/Packages/com.unity.ide.visualstudio/
+/Packages/com.unity.ide.vscode/
+
+# --- アセットのインポート時に生成される一時ファイル ---
+# （Assets内の.metaファイルはGit管理が必要ですが、以下の一時ファイルは不要です）
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# --- Unityのクラッシュレポートやバックアップ ---
+sysinfo.txt
+CrashReport/
+
+# --- OSが自動生成するシステムファイル ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Visual Studio / VS Code の設定・キャッシュフォルダ ---
+.vs/
+.vscode/
+.idea/
+
+# --- ビルド成果物の出力先 (お好みで調整) ---
+# プロジェクト直下に「Build」などの名前でビルド出力する場合は自動で除外されます
+/[Bb]uild/
+/[Bb]uilds/
+
+# --- 配信・ストア用パッケージの一時ファイル ---
+*.apk
+*.aab
+*.unitypackage

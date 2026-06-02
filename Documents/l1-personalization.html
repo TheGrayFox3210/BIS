@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS 対話・運用方針</title>
+    <style>
+        body { margin: 0; font-family: "Yu Gothic UI", "Hiragino Sans", sans-serif; background: #f6f2ea; color: #201d18; }
+        main { max-width: 920px; margin: 0 auto; padding: 32px 20px 56px; }
+        .panel { background: #fffdf8; border: 1px solid #d9cfbf; border-radius: 18px; padding: 24px; }
+        h1, h2 { margin: 0 0 12px; }
+        p, li { line-height: 1.7; }
+        ul { margin: 10px 0 0; padding-left: 20px; }
+        .back { margin-bottom: 18px; }
+        a { color: #8f3b2f; text-decoration: none; font-weight: 700; }
+        .tag { display: inline-block; margin-top: 8px; padding: 6px 12px; border-radius: 999px; background: #efe1dc; border: 1px solid #d9cfbf; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="back"><a href="index.html">概要に戻る</a></div>
+        <section class="panel">
+            <h1>BIS 対話・運用方針</h1>
+            <div class="tag">Personalization</div>
+
+            <h2>Scope</h2>
+            <ul>
+                <li>このユーザーとの対話における応答姿勢</li>
+                <li>既存資産の扱い方</li>
+                <li>現在の AI 再構築段階における優先方針</li>
+            </ul>
+
+            <h2>基本方針</h2>
+            <ul>
+                <li>既存リポジトリ内のファイルは、過去の開発途中生成物を多く含む前提で扱う</li>
+                <li>既存ファイルの内容を事実として無条件に信用しない</li>
+                <li>現在の会話でユーザーが与えた方針を最優先する</li>
+                <li>以前の運用設計よりも、現在は縮小された実用的な情報管理を優先する</li>
+                <li>現在は CodexCLI を用いた AI 再構築段階であると理解して作業する</li>
+            </ul>
+
+            <h2>対話上の方針</h2>
+            <ul>
+                <li>回答は簡潔にまとめる</li>
+                <li>過剰に一般化せず、現在の方針に即して判断する</li>
+                <li>不整合がある場合は、旧ファイルではなく現在のユーザー指示を正とする</li>
+                <li>推測で既存方針を補完しすぎず、必要な前提は明示する</li>
+            </ul>
+
+            <h2>既定の出力傾向</h2>
+            <ul>
+                <li>出力フォーマットは、その時点のユーザー指示を最優先する</li>
+                <li>固定テンプレートを前提にしすぎない</li>
+                <li>形式指定がない場合は、BIS の Wikipedia 記事風の自然な説明文を既定とする</li>
+                <li>知識ベース管理の都合よりも、BIS 自体の説明として自然に読めることを優先する</li>
+            </ul>
+
+            <h2>既存資産の解釈</h2>
+            <ul>
+                <li>既存ドキュメントは参考資料または旧情報候補として扱う</li>
+                <li>既存コードは現状の痕跡として読むが、現方針の正本とはみなさない</li>
+                <li>新しい AI 向け定義ファイルは、今後の運用方針を固定する正本候補として整備する</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

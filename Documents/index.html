@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS ソリューション概要</title>
+    <style>
+        :root {
+            --bg: #f5f1e8;
+            --panel: #fffdf8;
+            --line: #d8cfbf;
+            --text: #1f1c16;
+            --muted: #6d6558;
+            --accent: #7b3f00;
+            --accent-soft: #ede2d2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Yu Gothic UI", "Hiragino Sans", sans-serif;
+            background:
+                radial-gradient(circle at top right, #eadfce 0, transparent 28rem),
+                linear-gradient(180deg, #f7f2ea 0%, #f2ebe0 100%);
+            color: var(--text);
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 64px;
+        }
+
+        .hero,
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 18px 40px rgba(31, 28, 22, 0.06);
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 12px;
+            line-height: 1.2;
+        }
+
+        p {
+            line-height: 1.7;
+            margin: 0 0 12px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .meta span {
+            border: 1px solid var(--line);
+            background: var(--accent-soft);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.92rem;
+        }
+
+        .section {
+            margin-top: 28px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            color: var(--muted);
+            min-height: 5.5em;
+        }
+
+        .card a,
+        .panel a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .deps {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            color: var(--muted);
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 24px 14px 48px;
+            }
+
+            .hero,
+            .panel,
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="hero">
+            <div class="eyebrow">BIS Overview</div>
+            <h1>BIS ソリューション概要</h1>
+            <p>BIS は複数プロジェクトから構成されるソリューションであり、共通ルール、ソリューション構造、BIS 固有の実装方針を段階的に組み合わせて開発されます。</p>
+            <p>この資料は、BIS におけるルールや設計方針がどのように整理されているかを、人間が確認しやすい形でまとめたものです。</p>
+            <div class="meta">
+                <span>Version 2</span>
+                <span>Status: draft</span>
+                <span>Encoding: UTF-8</span>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2>記述の構成</h2>
+            <p>BIS の記述は、上位ほど独立性が高く、下位ほど BIS 固有の文脈を含む 3 段階で整理されています。</p>
+            <ul>
+                <li>L1 は、対話姿勢や情報の扱い方など、利用者との基本的な運用方針を定義します。</li>
+                <li>L2 は、BIS に限定しない C# / Unity の共通規約を定義します。</li>
+                <li>L3 は、BIS ソリューション固有の構造、用語、命名、通信方針を定義します。</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>主要項目</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>対話・運用方針</h3>
+                    <p>既存資産の扱い方、応答の基調、BIS 再構築段階における優先姿勢を記述します。</p>
+                    <p><a href="l1-personalization.html">対話・運用方針を見る</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>C# / Unity 共通規約</h3>
+                    <p>BIS に依存しない書式、命名、カプセル化、通信設計上の基本方針を記述します。</p>
+                    <p><a href="csharp_rules.html">C# / Unity 共通規約を見る</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>BIS ソリューション構造</h3>
+                    <p>ソリューション内の各プロジェクトの役割、フロントエンド設計、記録方針を記述します。</p>
+                    <p><a href="project_structure.html">ソリューション構造を見る</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>BIS 固有の C# ルール</h3>
+                    <p>BIS プレフィックス規則や MagicOnion ベースの通信前提など、BIS 固有の上書き条件を記述します。</p>
+                    <p><a href="bis_csharp_overrides.html">BIS 固有ルールを見る</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section panel">
+            <h2>参照の前提</h2>
+            <p>この HTML は <code>AIData</code> 配下の現行定義を読みやすく再構成した閲覧用資料です。BIS に関する実際の正本は Markdown / JSON 側に置かれています。</p>
+            <ul>
+                <li><code>AIData/Registry.json</code></li>
+                <li><code>AIData/L1/PersonalOperatingPrinciples.md</code></li>
+                <li><code>AIData/L2/CSharpUnityRules.md</code></li>
+                <li><code>AIData/L3/SolutionStructure.md</code></li>
+                <li><code>AIData/L3/BISCSharpOverrides.md</code></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

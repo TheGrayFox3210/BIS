@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BIS.Server/BIS.Server.csproj" />
+  <Project Path="BIS.Shared/BIS.Shared.csproj" />
+</Solution>

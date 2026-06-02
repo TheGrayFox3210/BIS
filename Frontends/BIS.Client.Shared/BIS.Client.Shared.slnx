@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="BIS.Shared.Unity.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

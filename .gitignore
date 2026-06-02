@@ -1,0 +1,18 @@
+# IDE
+.idea/
+.vs/
+
+# .NET
+**/bin/
+**/obj/
+**/*.csproj.user
+**/*.suo
+
+# Unity
+**/Library/
+**/Logs/
+**/Temp/
+**/UserSettings/
+
+# Local build artifacts
+**/.artifacts/

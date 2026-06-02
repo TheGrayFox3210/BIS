@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS ソリューション構造</title>
+    <style>
+        body { margin: 0; font-family: "Yu Gothic UI", "Hiragino Sans", sans-serif; background: #f6f2ea; color: #201d18; }
+        main { max-width: 980px; margin: 0 auto; padding: 32px 20px 56px; }
+        .panel { background: #fffdf8; border: 1px solid #d9cfbf; border-radius: 18px; padding: 24px; }
+        h1, h2, h3 { margin: 0 0 12px; }
+        p, li { line-height: 1.7; }
+        ul { margin: 10px 0 0; padding-left: 20px; }
+        .back { margin-bottom: 18px; }
+        a { color: #8f3b2f; text-decoration: none; font-weight: 700; }
+        .tag { display: inline-block; margin-top: 8px; padding: 6px 12px; border-radius: 999px; background: #efe1dc; border: 1px solid #d9cfbf; }
+        code { font-family: Consolas, monospace; background: #f3ece4; padding: 1px 5px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="back"><a href="index.html">概要に戻る</a></div>
+        <section class="panel">
+            <h1>BIS ソリューション構造</h1>
+            <div class="tag">BIS Solution Knowledge</div>
+
+            <h2>Terminology</h2>
+            <ul>
+                <li><code>BIS</code> は単一プロジェクト名ではなく、ソリューション全体を指す</li>
+            </ul>
+
+            <h2>Solution Structure</h2>
+            <ul>
+                <li><code>/Backends/BIS.Server</code>: ASP.NET / MagicOnion ベースのサーバー機能</li>
+                <li><code>/Backends/BIS.Shared</code>: サーバー・クライアント間で共有されるデータ型やロジック</li>
+                <li><code>/Frontends/BIS.Client.Shared</code>: Unity クライアント間の共有ライブラリ</li>
+                <li><code>/Frontends/BIS.Client.Dealer</code>: ディーラー向け Android クライアント</li>
+            </ul>
+
+            <h2>Unity Asset Isolation Rule</h2>
+            <ul>
+                <li>独自スクリプトや独自アセットは <code>Assets/プロジェクト名/</code> 配下に集約する</li>
+                <li>例: <code>Assets/BIS.Client.Shared/</code></li>
+                <li>目的は、サードパーティ製アセットとの混在や命名衝突を避けること</li>
+            </ul>
+
+            <h2>Frontend Layering Rule</h2>
+
+            <h3>Core</h3>
+            <ul>
+                <li>基幹クラス</li>
+                <li>インフラ</li>
+                <li>各種基底クラス</li>
+            </ul>
+
+            <h3>Managers</h3>
+            <ul>
+                <li>Model 相当</li>
+                <li>データ管理</li>
+                <li>通信</li>
+                <li>コアとなるビジネスロジック</li>
+                <li>状態保持</li>
+            </ul>
+
+            <h3>Modules</h3>
+            <ul>
+                <li>ViewModel 相当</li>
+                <li>Managers と UI の仲介</li>
+                <li>UI への描画指示</li>
+                <li>UI からの入力受付と解釈</li>
+            </ul>
+
+            <h3>UI</h3>
+            <ul>
+                <li>View 相当</li>
+                <li>画面描画</li>
+                <li>入力受付</li>
+            </ul>
+
+            <h3>UI Grain</h3>
+            <ul>
+                <li><code>Parts</code>: 最小単位の単体 UI</li>
+                <li><code>Components</code>: 単独ではユースケースを完結しない UI</li>
+                <li><code>Widgets</code>: 単一ユースケースを満たす最上位 UI ブロック</li>
+            </ul>
+
+            <h2>記録方針</h2>
+            <ul>
+                <li>定義ファイルには役割だけでなく依存関係も残す</li>
+                <li>参照元: どこで使われているか</li>
+                <li>作用先: どのロジックや画面に影響するか</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

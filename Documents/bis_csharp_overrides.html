@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIS 固有の C# ルール</title>
+    <style>
+        body { margin: 0; font-family: "Yu Gothic UI", "Hiragino Sans", sans-serif; background: #f6f2ea; color: #201d18; }
+        main { max-width: 980px; margin: 0 auto; padding: 32px 20px 56px; }
+        .panel { background: #fffdf8; border: 1px solid #d9cfbf; border-radius: 18px; padding: 24px; }
+        h1, h2 { margin: 0 0 12px; }
+        p, li { line-height: 1.7; }
+        ul { margin: 10px 0 0; padding-left: 20px; }
+        .back { margin-bottom: 18px; }
+        a { color: #8f3b2f; text-decoration: none; font-weight: 700; }
+        .tag { display: inline-block; margin-top: 8px; padding: 6px 12px; border-radius: 999px; background: #efe1dc; border: 1px solid #d9cfbf; }
+        code { font-family: Consolas, monospace; background: #f3ece4; padding: 1px 5px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="back"><a href="index.html">概要に戻る</a></div>
+        <section class="panel">
+            <h1>BIS 固有の C# ルール</h1>
+            <div class="tag">BIS Solution Knowledge</div>
+
+            <h2>Naming Overrides</h2>
+            <ul>
+                <li>クラス名 / 構造体名 / enum / delegate / ファイル名: PascalCase + <code>BIS</code> プレフィックス必須</li>
+                <li>名前空間: ルートは <code>BIS</code> で始める</li>
+                <li>インターフェース: PascalCase + <code>IBIS</code> プレフィックス必須</li>
+            </ul>
+
+            <h2>Communication Overrides</h2>
+            <ul>
+                <li>BIS では gRPC + MagicOnion を採用する</li>
+                <li>通信はイベント駆動の単一パイプ設計を前提とする</li>
+                <li>ペイロードは <code>BISNetworkEvent</code> と <code>BISNetworkData</code> の組み合わせで送受信する</li>
+                <li>通信境界では、完全な静的型安全性より柔軟性を優先する</li>
+            </ul>
+
+            <h2>適用方針</h2>
+            <ul>
+                <li>BIS 向けの新規型名を提案する場合は、このファイルの接頭辞規則を適用する</li>
+                <li>BIS の通信コードを扱う場合は、MagicOnion 前提を優先する</li>
+                <li>L2 と矛盾するように見える場合は、BIS 文脈ではこのファイルを優先する</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

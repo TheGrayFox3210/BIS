@@ -1,0 +1,83 @@
+{
+    "MetaInstruction": "BIS 開発用 AI 知識ベースの索引。情報は 3 レイヤーで管理される。上位レイヤーは下位レイヤーに依存せず、下位レイヤーが上位レイヤーに依存する。",
+    "Version": 2,
+    "Status": "draft",
+    "PreferredFormat": "markdown",
+    "PreferredRoot": "/AIData",
+    "StartupDocument": "/AIData/START_HERE.md",
+    "LayerModel": {
+        "Rule": "L1 depends on nothing. L2 may depend on L1. L3 may depend on L1 and L2.",
+        "Interpretation": {
+            "L1": "ユーザー個人との対話・運用方針",
+            "L2": "BIS 非依存の低レベル汎用ルール",
+            "L3": "BIS 固有の構造・設計・運用"
+        }
+    },
+    "Sources": [
+        "user_instructions_in_chat",
+        "/AIData/START_HERE.md",
+        "/AIData/L1/PersonalOperatingPrinciples.md",
+        "/AIData/L2/CSharpUnityRules.md",
+        "/AIData/L3/SolutionStructure.md",
+        "/AIData/L3/BISCSharpOverrides.md"
+    ],
+    "Layers": [
+        {
+            "Layer": "L1",
+            "Name": "Personalization",
+            "Description": "ユーザー個人との対話方針、応答スタイル、作業時の優先事項",
+            "DependsOn": [],
+            "Entries": [
+                {
+                    "Key": "personal_operating_principles",
+                    "Title": "ユーザー個別の対話・運用方針",
+                    "Path": "/AIData/L1/PersonalOperatingPrinciples.md",
+                    "Format": "markdown",
+                    "Canonical": true
+                }
+            ]
+        },
+        {
+            "Layer": "L2",
+            "Name": "General CSharp Rules",
+            "Description": "BIS に依存しない C# / Unity 系の低レベル規約",
+            "DependsOn": [
+                "L1"
+            ],
+            "Entries": [
+                {
+                    "Key": "csharp_general_rules",
+                    "Title": "C#・Unity コーディング規約とアーキテクチャ思想",
+                    "Path": "/AIData/L2/CSharpUnityRules.md",
+                    "Format": "markdown",
+                    "Canonical": true
+                }
+            ]
+        },
+        {
+            "Layer": "L3",
+            "Name": "BIS Solution Knowledge",
+            "Description": "BIS ソリューション固有の構造、責務、用語、設計前提",
+            "DependsOn": [
+                "L1",
+                "L2"
+            ],
+            "Entries": [
+                {
+                    "Key": "bis_solution_structure",
+                    "Title": "BIS ソリューション構造とフロントエンド設計",
+                    "Path": "/AIData/L3/SolutionStructure.md",
+                    "Format": "markdown",
+                    "Canonical": true
+                },
+                {
+                    "Key": "bis_csharp_overrides",
+                    "Title": "BIS 固有の C# 命名・通信ルール",
+                    "Path": "/AIData/L3/BISCSharpOverrides.md",
+                    "Format": "markdown",
+                    "Canonical": true
+                }
+            ]
+        }
+    ]
+}

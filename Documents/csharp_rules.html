@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C#・Unity 共通規約</title>
+    <style>
+        body { margin: 0; font-family: "Yu Gothic UI", "Hiragino Sans", sans-serif; background: #f6f2ea; color: #201d18; }
+        main { max-width: 980px; margin: 0 auto; padding: 32px 20px 56px; }
+        .panel { background: #fffdf8; border: 1px solid #d9cfbf; border-radius: 18px; padding: 24px; }
+        h1, h2 { margin: 0 0 12px; }
+        p, li { line-height: 1.7; }
+        ul { margin: 10px 0 0; padding-left: 20px; }
+        .back { margin-bottom: 18px; }
+        a { color: #8f3b2f; text-decoration: none; font-weight: 700; }
+        .tag { display: inline-block; margin-top: 8px; padding: 6px 12px; border-radius: 999px; background: #efe1dc; border: 1px solid #d9cfbf; }
+        code { font-family: Consolas, monospace; background: #f3ece4; padding: 1px 5px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="back"><a href="index.html">概要に戻る</a></div>
+        <section class="panel">
+            <h1>C#・Unity 共通規約</h1>
+            <div class="tag">General CSharp Rules</div>
+
+            <h2>Scope</h2>
+            <ul>
+                <li>BIS に限定しない C# / Unity 実装全般の基準</li>
+                <li>書式、可視性、汎用的な命名方針の判断基準</li>
+            </ul>
+
+            <h2>Format Rules</h2>
+            <ul>
+                <li>文字コード: UTF-8</li>
+                <li>改行コード: CRLF</li>
+                <li>インデント: スペース 4</li>
+                <li>最大行長: 120 文字</li>
+                <li>修飾子順: <code>public</code>, <code>private</code>, <code>protected</code>, <code>internal</code>, <code>file</code>, <code>new</code>, <code>static</code>, <code>abstract</code>, <code>virtual</code>, <code>sealed</code>, <code>readonly</code>, <code>override</code>, <code>extern</code>, <code>unsafe</code>, <code>volatile</code>, <code>async</code>, <code>required</code></li>
+            </ul>
+
+            <h2>Naming Rules</h2>
+            <ul>
+                <li>クラス名 / 構造体名 / enum / delegate / ファイル名: PascalCase</li>
+                <li>名前空間: PascalCase ベースで一貫させる</li>
+                <li>インターフェース: PascalCase + <code>I</code> プレフィックス</li>
+                <li>非公開インスタンスフィールド: camelCase + <code>_</code> プレフィックス</li>
+                <li>静的フィールド: camelCase + <code>s_</code> プレフィックス</li>
+                <li>定数 / <code>static readonly</code>: PascalCase</li>
+            </ul>
+
+            <h2>Encapsulation Rules</h2>
+            <ul>
+                <li><code>public</code> フィールドは原則禁止</li>
+                <li>外部公開が必要な値はプロパティ経由で公開する</li>
+                <li>メンバの可視性は最小限に保つ</li>
+                <li>特別な理由がない限り <code>private</code> を基準にする</li>
+            </ul>
+
+            <h2>C# Style Notes</h2>
+            <ul>
+                <li><code>var</code> は許容される</li>
+                <li>組み込み型は C# キーワード表記を優先する</li>
+                <li>不要な <code>this.</code> などの修飾は避ける</li>
+                <li>括弧は可読性を優先して必要時に明示する</li>
+            </ul>
+
+            <h2>通信設計上の前提</h2>
+            <ul>
+                <li>gRPC やイベント駆動設計は選択肢として許容される</li>
+                <li>通信境界では、型安全性と柔軟性のどちらを優先するかを明示する</li>
+                <li>具体的なフレームワークやイベント定義は L3 で扱う</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
